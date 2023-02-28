@@ -38,6 +38,7 @@ class Timer {
   start() {
     this.idTimerInterval = setInterval(() => {
       ref.btnStart.disabled = true;
+      fp.set('clickOpens', false);
       const remainder = convertMs(fp.selectedDates[0] - Date.now());
       this.onRemain(remainder, this.idTimerInterval);
     }, this.TIMER_DELAY);
